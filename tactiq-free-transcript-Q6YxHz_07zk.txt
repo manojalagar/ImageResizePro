@@ -1,0 +1,139 @@
+# tactiq.io free youtube transcript
+# 5G Network Architecture Simplified
+# https://www.youtube.com/watch/Q6YxHz_07zk
+
+00:00:00.420 foreign
+00:00:07.500 hey guys in today's video I'll take you
+00:00:10.620 through the 5G Network architecture in a
+00:00:12.719 simple way
+00:00:13.799 now I know Network architecture can be
+00:00:15.960 complex when you focus on all the nodes
+00:00:18.080 interfaces and various technology
+00:00:19.920 scenarios like interworking with earlier
+00:00:22.080 Generations or mobile networks
+00:00:24.060 but what I'm going to do is that I'll
+00:00:26.519 first show you a highly simplified view
+00:00:28.740 of the 5G mobile network and I will then
+00:00:31.439 show you a slightly more detailed
+00:00:33.480 architecture to explain most of the
+00:00:35.880 network nodes used in 5G networks and
+00:00:37.860 their responsibilities
+00:00:40.399 the radio network in 5G consists mainly
+00:00:43.620 of the cell tower Next Generation node B
+00:00:46.440 known as the GMB
+00:00:48.960 a gnb may be split into two entities gnb
+00:00:52.079 central unit CU and gnb distribution
+00:00:54.780 unit du
+00:00:56.640 it is possible to implement both the
+00:00:58.800 Central and distribution units in the
+00:01:01.079 same gnb
+00:01:02.520 but having the distribution unit du
+00:01:04.519 closer to the user location is also
+00:01:07.020 possible
+00:01:09.119 the distribution unit du is responsible
+00:01:12.119 for real-time scheduling functions that
+00:01:14.520 is which device should communicate when
+00:01:16.920 and what radio resources like frequency
+00:01:19.380 time slot Etc to assign to which device
+00:01:23.700 central unit deals with non-real-time
+00:01:26.220 functions
+00:01:27.780 central unit works with the higher
+00:01:29.880 layers of the network protocol stack
+00:01:32.340 whereas the DU or distribution unit
+00:01:34.920 works with lower layers of network
+00:01:37.020 protocol stack for example physical
+00:01:38.579 layer Mac and RLC
+00:01:42.840 the DU is closer to the site whereas the
+00:01:45.600 CU as the name suggests can be at a
+00:01:48.479 center location
+00:01:50.159 the split allows bringing the DU closer
+00:01:52.680 to the location of phone users and this
+00:01:55.200 split can be crucial in use cases like
+00:01:57.479 Edge Computing by bringing data closer
+00:02:00.960 to the user's location
+00:02:03.180 the 5G core Network consists of several
+00:02:05.759 nodes which we will look at in the next
+00:02:07.680 slide
+00:02:08.639 generally the keynodes representing the
+00:02:10.979 5G core Network in most documentation
+00:02:13.500 are AMF and UPF
+00:02:16.319 is a user plane function
+00:02:19.140 and AMF is the access and Mobility
+00:02:21.180 management function
+00:02:25.440 let's now look at the nodes and
+00:02:27.300 functions that 5G networks use
+00:02:30.120 the network architecture can be seen at
+00:02:32.220 at least two levels the user and control
+00:02:34.200 plans
+00:02:35.760 the control plan carries control
+00:02:37.560 functions such as signaling traffic and
+00:02:40.080 the user plane carries user data for
+00:02:42.060 example the content of the YouTube video
+00:02:44.580 you may be watching on your phone
+00:02:46.980 a mobile phone is connected to the base
+00:02:48.720 station gnb linked to AMF and UPF in the
+00:02:52.620 core Network UPF user plane function
+00:02:55.440 which as the name suggests is part of
+00:02:57.300 the user plane and connects a mobile
+00:02:59.340 phone via G node B to outside networks
+00:03:03.239 like the internet
+00:03:05.099 UPF is connected to the session
+00:03:06.840 management function SMF in the control
+00:03:09.420 plane
+00:03:10.920 UPF oversees service quality and applies
+00:03:14.099 policies that the PCF policy Control
+00:03:16.560 Function sends via SMF
+00:03:20.940 there can be more than one UPF and for
+00:03:23.099 low latency communication local UPF can
+00:03:26.519 be used to avoid transmission delays due
+00:03:28.739 to long distances
+00:03:30.720 let's now talk about SMF or session
+00:03:33.720 management function
+00:03:35.580 smfs establishes and manages the
+00:03:37.860 sessions between a user device and the
+00:03:40.080 mobile network
+00:03:41.340 it takes care of the management of IP
+00:03:43.620 addresses for the devices
+00:03:45.780 it is also responsible for selecting UPF
+00:03:48.659 for the user device and controlling the
+00:03:50.819 UPF
+00:03:54.000 finally SMF is also an interface between
+00:03:56.519 the UPF and the policy Control Function
+00:03:58.980 PCF where policies and business rules
+00:04:01.620 reside
+00:04:04.620 EMF or access and Mobility management
+00:04:06.659 function is part of the control plane it
+00:04:09.540 is connected to the G node B and
+00:04:11.519 provides access and Authentication
+00:04:14.159 Network slice selection function and ssf
+00:04:16.978 determines which AMF or amfs can serve a
+00:04:20.820 particular UE based on the service type
+00:04:22.860 the UE is trying to access
+00:04:26.160 UDR or unified data repository is a
+00:04:29.340 database where all the subscription
+00:04:30.900 application and other data reside
+00:04:35.220 UDR is a centralized data source that
+00:04:37.259 works with unified data management
+00:04:39.479 udm
+00:04:41.340 udm handles credentials and identity
+00:04:45.360 and finally nef or network exposure
+00:04:48.600 function exposes the 5G core Network
+00:04:51.060 capabilities to third-party apps
+00:04:52.979 developers and companies
+00:04:57.060 it opens up Network Services for example
+00:04:59.220 voice calls data connection Etc to
+00:05:01.680 third-party applications in a highly
+00:05:03.600 secure and robust way through apis and
+00:05:06.180 SDK
+00:05:07.500 that way third-party companies can
+00:05:09.660 create tailored Services by utilizing
+00:05:12.180 cellular Services allowing a mobile
+00:05:14.520 operator to extend their Network
+00:05:17.100 footprint
+00:05:19.380 thanks for watching the video guys I've
+00:05:21.000 written a detailed post on this topic
+00:05:22.620 and the link is in the description and
+00:05:24.960 if you like this video please hit the
+00:05:26.460 like button and make sure to subscribe
+00:05:28.440 to the channel because I'm posting new
+00:05:30.300 videos all the time

@@ -1,0 +1,185 @@
+# tactiq.io free youtube transcript
+# How does your mobile phone work? | ICT #1
+# https://www.youtube.com/watch/1JZG9x_VOwA
+
+00:00:00.210 [Presenter] For most of us,
+00:00:01.430 a mobile phone is a part of our lives.
+00:00:04.830 But I'm sure you're curious minds
+00:00:06.560 have always been struck by such questions
+00:00:08.690 as how a mobile phone makes a call,
+00:00:11.800 and why there are different generations
+00:00:13.330 of mobile communications?
+00:00:14.980 (upbeat music)
+00:00:17.660 Let's explore the technologybehind mobile communications.
+00:00:22.580 When you speak on your phone,
+00:00:24.140 your voice is picked up byyour phone's microphone.
+00:00:28.170 The microphone turns yourvoice into a digital signal
+00:00:31.200 with the help of MEMS sensor and IC. - (Micro-Electro-Mechanical Systems)
+00:00:35.820 The digital signal contains your voice
+00:00:37.880 in the form of zeros and ones.
+00:00:42.400 An antenna inside the phonereceives these zeros and ones
+00:00:46.140 and transmits them in theform of electromagnetic waves.
+00:00:51.360 Electromagnetic wavestransmit the zeros and ones
+00:00:54.930 by altering the wave characteristics,
+00:00:57.230 such as the amplitude, frequency, phase,
+00:01:00.020 or combinations of these.
+00:01:03.910 For example, in the case of frequency,
+00:01:06.340 zero and one are transmitted
+00:01:08.170 by using low and highfrequencies respectively.
+00:01:16.160 So, if you could find a way
+00:01:17.400 to transmit these electromagnetic waves
+00:01:19.830 to your friend's phone,
+00:01:21.140 you would be able to establish a call.
+00:01:24.310 However, electromagnetic waves
+00:01:26.430 are incapable of traveling long distances.
+00:01:31.390 They lose their strengthdue to the presence
+00:01:33.080 of physical objects, electrical equipment,
+00:01:35.610 and some environmental factors.
+00:01:39.820 In fact, if there were no such issues,
+00:01:42.210 even then, electromagnetic waveswould not carry on forever,
+00:01:46.030 due to the Earth's curved structure.
+00:01:49.570 To overcome these issues,cell towers were introduced,
+00:01:52.700 using the concept of cellular technology.
+00:01:58.160 In cellular technology,
+00:01:59.840 a geographic area isdivided into hexagonal cells
+00:02:03.950 with each cell having itsown tower and frequency slot.
+00:02:07.950 Generally, these cell towersare connected through wires,
+00:02:11.380 or more specifically,optical fiber cables.
+00:02:15.330 These optical fiber cablesare laid under the ground
+00:02:18.240 or the ocean,
+00:02:19.450 to provide national orinternational connectivity.
+00:02:23.360 The electromagnetic wavesproduced by your phone
+00:02:26.090 are picked up by the tower in your cell
+00:02:28.580 and convert them into highfrequency light pulses.
+00:02:32.300 These light pulses are carriedto the base transceiver box,
+00:02:35.590 located at the base of the tower
+00:02:37.520 for further signal processing,
+00:02:40.860 After processing, yourvoice signal is routed
+00:02:43.580 towards the destination tower.
+00:02:45.980 Upon receiving the pulses,
+00:02:47.850 the destination tower radiates it outwards
+00:02:50.660 in the form of electromagnetic waves,
+00:02:53.030 and your friend's phonethen receives the signal.
+00:02:55.940 This signal undergoes a reverse process,
+00:02:58.300 and your friend hears your voice.
+00:03:01.500 So, it's true that mobile communications
+00:03:03.920 are not entirely wireless,
+00:03:05.820 they do use a wired medium too.
+00:03:08.660 This is how mobilecommunications are carried out.
+00:03:11.820 However, there was a big issue
+00:03:13.530 that we intentionally left unanswered.
+00:03:16.200 Mobile communication is only successful
+00:03:18.850 when your tower transfers thesignal to your friends tower.
+00:03:22.430 But how does your tower know
+00:03:23.770 in which cell tower areayour friend is located?
+00:03:28.280 Well, for this process,the cell tower gets help
+00:03:30.770 from something called amobile switching center.
+00:03:34.520 The MSC is the central pointof a group of cell towers.
+00:03:39.200 Before moving further,
+00:03:40.640 let's explain moreinformation about the MSC.
+00:03:45.260 When you purchase a SIM card,
+00:03:47.270 all the subscription information
+00:03:48.910 is registered in a specified MSC.
+00:03:52.130 This MSC will be your home MSC.
+00:03:55.690 The home MSC stores informationsuch as service plans,
+00:03:59.280 your current location,and your activity status.
+00:04:02.320 If you move outside therange of your home MSC,
+00:04:05.430 the new MSC, which serves you instead,
+00:04:07.840 is known as a foreign MSC.
+00:04:10.380 As you enter a foreign MSC region,
+00:04:12.640 it communicates with your home MSC.
+00:04:15.260 In short, your home MSC always knows
+00:04:18.010 which MSC area you are in.
+00:04:20.769 To understand in which celllocation the subscriber is
+00:04:23.930 within the MSE area,
+00:04:25.650 the MSC uses a few techniques.
+00:04:29.090 One way is to updatethe subscriber location
+00:04:32.420 after a certain period.
+00:04:36.290 When the phone crosses apredefined number of towers,
+00:04:39.200 the location update is again done.
+00:04:42.590 The last one of these iswhen the phone is turned on.
+00:04:49.040 Let's try to understandall of these procedures
+00:04:51.480 with an example.
+00:04:53.210 Suppose, Emma wants to call John.
+00:04:55.900 When Emma dials John's number,
+00:04:57.980 the call request arrivesat Emma's home MSC.
+00:05:03.250 Upon receiving John's number,
+00:05:05.070 the request will beforwarded to John's home MSC.
+00:05:09.780 Now, John's MSC checksfor his current MSC.
+00:05:14.260 If John is in his home MSC,
+00:05:16.410 the call requests will be immediately sent
+00:05:18.430 to his current cell location,
+00:05:20.220 and it checks whether Johnis engaged on another call,
+00:05:23.260 or if his mobile is switched off.
+00:05:25.970 If everything is positive,John's phone rings,
+00:05:28.900 and the call will be connected.
+00:05:32.980 However, if John is not in his home MSC,
+00:05:36.490 John's home MSC simplyforwards the call request
+00:05:39.560 to the foreign MSC.
+00:05:41.370 The foreign MSC
+00:05:42.440 will follow the previouslyexplained procedure
+00:05:44.960 to locate John's phone,
+00:05:46.590 and will then establish the call.
+00:05:50.040 Now, let's discuss whythe frequency spectrum
+00:05:52.350 is quite important inmobile phone communications.
+00:05:55.690 To transfer zeros and onesin digital communication,
+00:05:59.320 each subscriber isallocated a frequency range.
+00:06:02.920 However, the frequency spectrum available
+00:06:04.980 for cellular communicationsis quite limited,
+00:06:08.020 and there are billions of subscribers.
+00:06:10.780 This issue is solved withthe help of two technologies,
+00:06:14.470 one frequency slot distribution,
+00:06:17.490 and two, multiple access technique.
+00:06:20.750 In the first technique,
+00:06:22.010 different frequency slotsare carefully allocated
+00:06:24.880 to different cell towers.
+00:06:27.210 In the multiple access technique,
+00:06:29.160 this frequency slot isefficiently distributed
+00:06:31.800 amongst all the activeusers in the cell area.
+00:06:37.760 Now, the big question.
+00:06:39.210 Why are there different generations
+00:06:40.850 of mobile phone technologies?
+00:06:45.020 1G originally allowedusers, for the first time,
+00:06:48.440 to carry a phone withouta cable attached to it.
+00:06:51.430 But 1G suffered from two major problems.
+00:06:55.200 The first problem was thatthe wireless transmission
+00:06:57.750 was in an analog format.
+00:07:00.120 Analog signals that are easilyaltered by external sources.
+00:07:03.730 So, it provided poor voicequality and poor security.
+00:07:07.870 The second problem was that it used
+00:07:09.720 the frequency divisionmultiple access technique,
+00:07:12.930 which used the availablespectrum in an inefficient way.
+00:07:17.390 These factors paved the wayfor the second generation
+00:07:20.160 of mobile communications,
+00:07:22.080 2G used digital multiple accesstechnologies, namely TDMA,
+00:07:27.090 or CDMA technology.
+00:07:29.910 The second generation
+00:07:31.090 also introduced a revolutionarydata service, SMS,
+00:07:35.120 and internet browsing.
+00:07:38.350 3G technology was focused
+00:07:40.200 on giving a higher data transfer speed.
+00:07:42.950 It used a WCD multiple access technique,
+00:07:46.430 along with an increase in bandwidth.
+00:07:48.680 To achieve this, the 3G speed of two Mbps
+00:07:53.060 allowed the transfer of data for uses
+00:07:55.190 such as GPS, videos,voice calls, et cetera.
+00:07:59.140 3G was a huge step in the transformation
+00:08:01.990 of the basic phone to a smartphone.
+00:08:04.970 Next came 4G, which achievedspeeds of 20 to 100 Mbps.
+00:08:10.580 This was suitable for highresolution movies and television.
+00:08:15.320 This higher speed was made possible
+00:08:17.400 due to the OFD multiple access technology,
+00:08:20.470 and MIMO technology.
+00:08:23.660 MIMO uses multipletransmitter receiver antennas
+00:08:27.290 inside both the mobilephone and the towers.
+00:08:30.720 The next generation ofmobile communication, 5G,
+00:08:34.080 to be rolled out soon,
+00:08:35.500 will use enhanced MIMOtechnology and millimeter waves.
+00:08:40.409 It will provide seamless connectivity
+00:08:42.390 to support the internet of things,
+00:08:44.670 such as driverless cars and smart homes.
+00:08:49.210 Would you like to learnhow a touchscreen works?
+00:08:52.130 Please check out this video.
+00:08:54.130 Please don't forget tosubscribe to Learn Engineering,
+00:08:57.080 and your support atpatreon.com is invaluable.
+00:09:00.850 Thank you.
