@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Resizer API</title>
+    <link href="https://cdn.replit.com/agent/bootstrap-agent-dark-theme.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <div class="container py-4">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <div class="text-center mb-5">
+                    <h1 class="display-4 mb-3">
+                        <i class="fas fa-image text-primary me-3"></i>
+                        Image Resizer API
+                    </h1>
+                    <p class="lead text-muted">High-quality image resizing with support for multiple formats</p>
+                </div>
+
+                <!-- API Info Card -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-info-circle me-2"></i>API Information</h5>
+                    </div>
+                    <div class="card-body">
+                        <div class="row">
+                            <div class="col-md-6">
+                                <h6>Supported Input Formats:</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>JPEG/JPG</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>PNG</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>WebP</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>GIF</li>
+                                </ul>
+                            </div>
+                            <div class="col-md-6">
+                                <h6>Supported Output Formats:</h6>
+                                <ul class="list-unstyled">
+                                    <li><i class="fas fa-check text-success me-2"></i>JPEG/JPG</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>PNG</li>
+                                    <li><i class="fas fa-check text-success me-2"></i>WebP</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <small class="text-muted">
+                                <i class="fas fa-exclamation-triangle me-1"></i>
+                                Maximum file size: 50MB | Maximum dimensions: 5000x5000px
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Upload Form -->
+                <div class="card mb-4">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-upload me-2"></i>Upload & Resize Image</h5>
+                    </div>
+                    <div class="card-body">
+                        <form id="uploadForm" enctype="multipart/form-data">
+                            <div class="row mb-3">
+                                <div class="col-md-6">
+                                    <label for="file" class="form-label">Select Image File</label>
+                                    <input type="file" class="form-control" id="file" name="file" accept="image/jpeg,image/jpg,image/png,image/webp,image/gif,.jpg,.jpeg,.png,.webp,.gif">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="url" class="form-label">Or Enter Image URL</label>
+                                    <input type="url" class="form-control" id="url" name="url" placeholder="https://example.com/image.jpg">
+                                </div>
+                            </div>
+                            
+                            <div class="row mb-3">
+                                <div class="col-md-4">
+                                    <label for="width" class="form-label">Width (px)</label>
+                                    <input type="number" class="form-control" id="width" name="width" min="1" max="5000" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="height" class="form-label">Height (px)</label>
+                                    <input type="number" class="form-control" id="height" name="height" min="1" max="5000" required>
+                                </div>
+                                <div class="col-md-4">
+                                    <label for="format" class="form-label">Output Format</label>
+                                    <select class="form-select" id="format" name="format">
+                                        <option value="">Auto (based on input)</option>
+                                        <option value="JPEG">JPEG/JPG</option>
+                                        <option value="PNG">PNG</option>
+                                        <option value="WEBP">WebP</option>
+                                    </select>
+                                </div>
+                            </div>
+                            
+                            <div class="mb-3">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="preserve_aspect_ratio" name="preserve_aspect_ratio">
+                                    <label class="form-check-label" for="preserve_aspect_ratio">
+                                        Preserve aspect ratio (fit within dimensions)
+                                    </label>
+                                </div>
+                            </div>
+                            
+                            <button type="submit" class="btn btn-primary btn-lg w-100" id="submitBtn">
+                                <i class="fas fa-magic me-2"></i>Resize Image
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Progress and Results -->
+                <div id="progressSection" class="card mb-4" style="display: none;">
+                    <div class="card-body">
+                        <div class="d-flex align-items-center">
+                            <div class="spinner-border spinner-border-sm text-primary me-3" role="status">
+                                <span class="visually-hidden">Loading...</span>
+                            </div>
+                            <span>Processing image...</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div id="errorSection" class="alert alert-danger" style="display: none;" role="alert">
+                    <i class="fas fa-exclamation-triangle me-2"></i>
+                    <span id="errorMessage"></span>
+                </div>
+
+                <div id="successSection" class="alert alert-success" style="display: none;" role="alert">
+                    <i class="fas fa-check-circle me-2"></i>
+                    Image resized successfully! <a href="#" id="downloadLink" class="alert-link">Download</a>
+                </div>
+
+                <!-- API Documentation -->
+                <div class="card">
+                    <div class="card-header">
+                        <h5 class="mb-0"><i class="fas fa-code me-2"></i>API Documentation</h5>
+                    </div>
+                    <div class="card-body">
+                        <h6>Endpoint: <code>POST /api/resize</code></h6>
+                        <p>Resize an image with the specified dimensions and format.</p>
+                        
+                        <h6 class="mt-4">Parameters:</h6>
+                        <div class="table-responsive">
+                            <table class="table table-sm">
+                                <thead>
+                                    <tr>
+                                        <th>Parameter</th>
+                                        <th>Type</th>
+                                        <th>Required</th>
+                                        <th>Description</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td><code>width</code></td>
+                                        <td>integer</td>
+                                        <td>Yes</td>
+                                        <td>Target width in pixels (1-5000)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>height</code></td>
+                                        <td>integer</td>
+                                        <td>Yes</td>
+                                        <td>Target height in pixels (1-5000)</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>format</code></td>
+                                        <td>string</td>
+                                        <td>No</td>
+                                        <td>Output format: JPEG/JPG, PNG, or WEBP</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>preserve_aspect_ratio</code></td>
+                                        <td>boolean</td>
+                                        <td>No</td>
+                                        <td>Maintain original aspect ratio</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>file</code></td>
+                                        <td>file</td>
+                                        <td>No*</td>
+                                        <td>Image file to upload</td>
+                                    </tr>
+                                    <tr>
+                                        <td><code>url</code></td>
+                                        <td>string</td>
+                                        <td>No*</td>
+                                        <td>URL of image to process</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <small class="text-muted">* Either <code>file</code> or <code>url</code> must be provided</small>
+                        
+                        <h6 class="mt-4">Example cURL command:</h6>
+                        <pre class="bg-dark p-3 rounded"><code>curl -X POST \
+  -F "file=@image.jpg" \
+  -F "width=800" \
+  -F "height=600" \
+  -F "format=JPEG" \
+  http://localhost:5000/api/resize \
+  --output resized_image.jpg</code></pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{{ url_for('static', filename='js/app.js') }}"></script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+/* Custom styles for the image resizer application */
+body {
+    background-color: var(--bs-dark);
+    color: var(--bs-light);
+}
+
+.card {
+    background-color: var(--bs-gray-900);
+    border-color: var(--bs-gray-700);
+}
+
+.card-header {
+    background-color: var(--bs-gray-800);
+    border-bottom-color: var(--bs-gray-700);
+}
+
+.table-dark {
+    --bs-table-bg: var(--bs-gray-900);
+    --bs-table-border-color: var(--bs-gray-700);
+}
+
+.form-control, .form-select {
+    background-color: var(--bs-gray-800);
+    border-color: var(--bs-gray-600);
+    color: var(--bs-light);
+}
+
+.form-control:focus, .form-select:focus {
+    background-color: var(--bs-gray-700);
+    border-color: var(--bs-primary);
+    color: var(--bs-light);
+    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+}
+
+.btn-primary {
+    background-color: var(--bs-primary);
+    border-color: var(--bs-primary);
+}
+
+.btn-primary:hover {
+    background-color: var(--bs-blue);
+    border-color: var(--bs-blue);
+}
+
+pre {
+    background-color: var(--bs-gray-900) !important;
+    color: var(--bs-light);
+    border: 1px solid var(--bs-gray-700);
+}
+
+code {
+    color: var(--bs-info);
+    background-color: var(--bs-gray-900);
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+}
+
+.text-primary {
+    color: var(--bs-primary) !important;
+}
+
+.text-success {
+    color: var(--bs-success) !important;
+}
+
+.text-muted {
+    color: var(--bs-gray-400) !important;
+}
+
+.alert-danger {
+    background-color: rgba(220, 53, 69, 0.1);
+    border-color: var(--bs-danger);
+    color: var(--bs-danger);
+}
+
+.alert-success {
+    background-color: rgba(25, 135, 84, 0.1);
+    border-color: var(--bs-success);
+    color: var(--bs-success);
+}
+
+.spinner-border-sm {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* File input styling */
+.form-control[type="file"] {
+    border: 2px dashed var(--bs-gray-600);
+    background-color: var(--bs-gray-800);
+}
+
+.form-control[type="file"]:hover {
+    border-color: var(--bs-primary);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .display-4 {
+        font-size: 2rem;
+    }
+    
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+}
